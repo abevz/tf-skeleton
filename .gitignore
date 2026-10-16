@@ -1,0 +1,24 @@
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.tfstate.lock.info
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+backend.hcl
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+tfplan
+*.tfplan
+.terragrunt-cache/
+.terragrunt-stack/
+local.hcl
+
+# Skeletons carry no lock file: each project generates and commits its own.
+.terraform.lock.hcl

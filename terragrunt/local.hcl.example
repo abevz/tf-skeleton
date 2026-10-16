@@ -1,0 +1,6 @@
+# Copy to local.hcl (gitignored). Environment variables TG_ACCOUNT_ID and
+# TG_REGION take precedence over these values.
+locals {
+  account_id = "123456789012"
+  region     = "eu-central-1"
+}

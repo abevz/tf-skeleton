@@ -1,0 +1,6 @@
+# Copy to backend.hcl (gitignored) and fill in.
+# The bucket must already exist, with versioning on: it is the only way back
+# from a bad apply.
+bucket = "ACCOUNT_ID-eu-central-1-terraform-states"
+key    = "PROJECT/COMPONENT/tofu.tfstate"
+region = "eu-central-1"
