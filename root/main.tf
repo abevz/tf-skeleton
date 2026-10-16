@@ -7,6 +7,7 @@
 # }
 
 locals {
+  # Project and ManagedBy are fixed here; envs/<env>.tfvars adds the rest.
   tags = merge({
     Project   = var.project
     ManagedBy = "opentofu"

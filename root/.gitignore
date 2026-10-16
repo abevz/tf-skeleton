@@ -1,0 +1,17 @@
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.tfstate.lock.info
+tfplan
+*.tfplan
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+# Personal or secret values only. envs/*.tfvars and envs/*.tfbackend are
+# committed; .terraform.lock.hcl is committed too.
+terraform.tfvars
+*.auto.tfvars
+*.secret.tfvars

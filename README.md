@@ -14,6 +14,10 @@ step.
 subdirectory goes after `//`:
 `tofu init -from-module=git::https://github.com/abevz/tf-skeleton.git//module`.
 
+`-from-module` **skips dotfiles**, so `.gitignore` and `.tflint.hcl` are not
+copied. From a clone, `./new.sh module|root|terragrunt <dir>` does the init and
+copies them too.
+
 ## Conventions every skeleton follows
 
 - `versions.tf` pins `required_version` and every provider with `source` and a
@@ -27,8 +31,10 @@ subdirectory goes after `//`:
   one mistake that is expensive to undo.
 - Tags come in through `default_tags` as a variable, so callers extend the set
   without rewriting the provider block.
-- Local values that differ per person (account, bucket, e-mail) live in
-  gitignored files with a committed `.example` next to them.
+- Environment values are committed per environment (`envs/<env>.s3.tfbackend`,
+  `envs/<env>.tfvars`); only personal values and secrets are gitignored. Each
+  skeleton carries its own `.gitignore`, because `-from-module` copies only the
+  subdirectory.
 
 Sources: the module layout and variable contract from the `terraform-skill`
 skill; the root/terragrunt practices from `aws-community-central-asia-2026`

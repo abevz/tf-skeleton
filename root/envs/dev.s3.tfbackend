@@ -1,0 +1,15 @@
+# Backend values for the dev environment. Committed: there are no secrets here,
+# only where the state lives. Credentials come from AWS_PROFILE or a role,
+# never from this file.
+#
+#   tofu init -backend-config=envs/dev.s3.tfbackend
+#
+# bucket — one per account and region, created outside this configuration,
+#          with versioning, encryption and public access blocked.
+# key    — <project>/<env>/<component>/terraform.tfstate. Never reuse a key and
+#          never change it silently: a new key is an empty state, and the next
+#          plan would create everything again. Move state with -migrate-state.
+# region — the bucket's region, not necessarily where the resources are.
+bucket = "ACCOUNT_ID-eu-central-1-terraform-states"
+key    = "REPLACE-ME/dev/main/terraform.tfstate"
+region = "eu-central-1"

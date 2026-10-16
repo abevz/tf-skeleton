@@ -1,0 +1,6 @@
+.terraform/
+.terragrunt-cache/
+.terragrunt-stack/
+*.tfstate
+*.tfstate.*
+local.hcl
